@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        section {
+            width: 25%;
+            height: 500px;
+            border: 1px solid black;
+            float: left;
+            animation: move 5s linear 0s;
+        }
+        
+        section:nth-child(4) {
+            width: 24%;
+            height: 500px;
+            border: 1px solid black;
+            float: left;
+            animation: move 5s linear 0s;
+        }
+        /*//整体动画*/
+        
+        @-webkit-keyframes move {
+            0% {
+                transform: rotateZ(0deg);
+                margin-top: 500px;
+            }
+            25% {
+                transform: rotateZ(45deg);
+                margin-top: 0px;
+            }
+            30% {
+                margin-top: 50px;
+                transform: rotateZ(45deg);
+            }
+            40% {
+                margin-top: 10px;
+                transform: rotateZ(90deg);
+            }
+            50% {
+                margin-top: 50px;
+                transform: rotateZ(90deg);
+            }
+            60% {
+                margin-top: 50px;
+                transform: rotate(180deg);
+            }
+            70% {
+                margin-top: 10px;
+                transform: rotate(180deg);
+            }
+            80% {
+                margin-top: 0px;
+                transform: rotate(360deg);
+            }
+            90% {
+                margin-top: 50px;
+                transform: rotate(0deg);
+            }
+            100% {
+                margin-top: 0px;
+                margin-left: 400px;
+                transform: rotate(360deg);
+            }
+        }
+        /* 树叶动画 */
+        
+        .box1 {
+            width: 340px;
+            height: 502px;
+            position: relative;
+            left: -437px;
+            top: -24px;
+        }
+        
+        .big {
+            width: 239px;
+            height: 150px;
+            background: url(img/0608.png) no-repeat;
+            float: left;
+            margin: 20px 460px;
+        }
+        
+        .small {
+            width: 90px;
+            height: 65px;
+            background: url(img/0608.png) no-repeat 0 -150px;
+            margin: 100px 340px;
+            animation: drop 6s linear 0s infinite;
+        }
+        
+        @-webkit-keyframes drop {
+            0% {
+                transform: rotateZ(-10deg) translateX(0) translateY(-250px);
+                opacity: 0;
+            }
+            30% {
+                transform: rotateZ(10deg) translateX(150px) translateY(-50px);
+                opacity: 1;
+            }
+            60% {
+                transform: rotateZ(30deg) translateX(300px) translateY(150px);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateZ(30deg) translateX(300px) translateY(150px);
+                opacity: 0;
+            }
+        }
+        /*火箭动画*/
+        
+        .box2 {
+            width: 407px;
+            height: 502px;
+            position: absolute;
+        }
+        
+        .rocket {
+            width: 225px;
+            height: 220px;
+            background: url(img/0608.png) no-repeat -239px 0;
+            margin: 100px 100px;
+            opacity: 1;
+            transform: translateX(400px) translateY(-500px);
+            animation: shan 0.5s linear infinite;
+        }
+        
+        .line1 {
+            width: 156px;
+            height: 153px;
+            background: url(img/0608.png) no-repeat -239px -220px;
+            position: absolute;
+            left: 229px;
+            top: 200px;
+            opacity: 0;
+            transform: translateX(0px) translateY(0px);
+            animation: jump 0.5s linear infinite;
+        }
+        
+        .line2 {
+            width: 74px;
+            height: 78px;
+            background: url(img/0608.png) no-repeat -164px -150px;
+            position: absolute;
+            left: 139px;
+            top: 71px;
+            opacity: 0;
+            transform: translateX(0px) translateY(0px);
+            animation: jump 0.5s linear 0.5 infinite;
+        }
+        
+        .line3 {
+            width: 156px;
+            height: 153px;
+            background: url(img/0608.png) no-repeat -239px -373px;
+            position: absolute;
+            left: 160px;
+            top: 215px;
+            opacity: 0;
+            transform: translateX(0px) translateY(0px);
+            animation: jump 0.5s linear 0.5s infinite;
+        }
+        
+        .line4 {
+            width: 94px;
+            height: 93px;
+            background: url(img/0608.png) no-repeat -395px -220px;
+            position: absolute;
+            left: 116px;
+            top: 110px;
+            opacity: 0;
+            transform: translateX(0px) translateY(0px);
+            animation: jump 0.5s linear 0.5s infinite;
+        }
+        
+        @-webkit-keyframes shan {
+            0% {
+                transform: translateX(-15PX) translateY(-12PX);
+            }
+            100% {
+                transform: translateX(15PX) translateY(12PX);
+            }
+        }
+        
+        @-webkit-keyframes jump {
+            0% {
+                opacity: 0;
+                transform: translateX(300px) translateY(-300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(0px) translateY(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-300px) translateY(300px);
+            }
+        }
+        /*灯泡动画*/
+        
+        .bulb {
+            width: 191px;
+            height: 267px;
+            background: url(img/0608.png) no-repeat 0 -620px;
+            position: relative;
+            left: 80px;
+            top: 80px;
+        }
+        
+        .light {
+            width: 341px;
+            height: 256px;
+            background: url(img/0608.png) no-repeat 0 -887px;
+            position: relative;
+            top: -252px;
+            left: 0px;
+            opacity: 0;
+            transform: translateX(0px);
+            animation: dong 2s ease-in-out 1s infinite;
+        }
+        
+        @-webkit-keyframes dong {
+            0% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        /*立方体动画*/
+        
+        section:nth-child(4) {
+            width: 24%;
+            height: 500px;
+            border: 1px solid black;
+            float: left;
+        }
+        
+        .box4 {
+            position: relative;
+        }
+        
+        .qiu {
+            width: 137px;
+            height: 136px;
+            background: url(img/0608.png) no-repeat 0 -482px;
+            position: absolute;
+            left: 146px;
+            top: 120px;
+            opacity: 1;
+            transform: translateX(0px);
+            animation: rotatez 1.5s ease-in-out infinite;
+        }
+        
+        .sanj {
+            width: 170px;
+            height: 170px;
+            background: url(img/0608.png) no-repeat 0 -311px;
+            position: absolute;
+            left: 45px;
+            top: 86px;
+            opacity: 1;
+            transform: translateY(0px);
+            animation: rotatez 3s ease-in-out 1s infinite;
+        }
+        
+        .sif {
+            width: 96px;
+            height: 96px;
+            background: url(img/0608.png) no-repeat 0 -215px;
+            position: absolute;
+            left: 117px;
+            top: 160px;
+            opacity: 1;
+            transform: translateY(0px);
+            animation: rotatez 2s ease-in-out 2s infinite;
+        }
+        
+        @-webkit-keyframes rotatez {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            30% {
+                transform: rotateZ(360deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+
+        <div class="box1">
+
+
+            <div class="big">
+            </div>
+            <div class="small">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="box2">
+            <div class="rocket">
+
+            </div>
+            <div class="line1">
+
+            </div>
+            <div class="line2">
+
+            </div>
+            <div class="line3">
+
+            </div>
+            <div class="line4">
+
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+
+        <div class="bulb">
+
+        </div>
+        <div class="light">
+
+        </div>
+    </section>
+    <section>
+
+
+        <div class="box4">
+
+
+            <div class="qiu">
+
+            </div>
+            <div class="sanj">
+
+            </div>
+            <div class="sif">
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
